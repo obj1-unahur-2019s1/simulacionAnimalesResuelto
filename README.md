@@ -89,6 +89,17 @@ Tal vez alguna se rompa, se dan cuenta porque alguno de los personajes "dice" al
 ## 5. Movimiento
 
 ## 6. Un poco más de lógica: tiene hambre
+Ahora nos toca determinar si una vaca o gallina tienen hambre, y usaremos la tecla h para que nos lo muestre.
+
+Para las vacas vamos a determinar lo siguiente: 
+- Las vacas tienen hambre si su peso esta por debajo de los 200 kilogramos
+- A partir de ahora solo podrán comer si tienen hambre.
+- Con cada movimiento que realiza la vaca pierde el 5% de su peso, y su peso nunca podría ser menor a 50 kilogramos.
+
+Y para las gallinas el comportamiento será el siguiente:
+- Las gallinas siempre pueden comer, independientemente si tienen o no hambre
+- Una gallina tendrá hambre si la cantidad de veces que fue a comer es multiplo de 3
+- Las gallinas no pierden peso con los movimiento que realizan.
 
 ## 7. Comedero 
 
