@@ -131,3 +131,19 @@ Y para las gallinas el comportamiento será el siguiente:
 **Bonus:** hacer que la vaca tire un error cuando intento que camine y su energía es igual a 50.
 
 ## 7. Comedero
+
+Vamos a agregar al modelo los comederos, que son... lugares donde los animales pueden ir a comer :hushed:.
+
+De cada comedero nos va a interesar:
+* saber si puede atender a un animal;
+* que efectivamente le de comida a un animal.
+
+Por ahora vamos a tener solamente al comedero normal, que se comporta de la siguiente manera:
+* puede atender a un animal si este tiene hambre **y** no supera el peso máximo establecido para ese comedero. Este peso se debe poder configurar para cada comedero;
+* cuando le da de comer a un animal, lo hace con una ración de 6 kilos. Cada comedero arranca con una determinada cantidad de raciones, y cada vez que le da de comer a un animal pierde una.
+
+**Bonus:** hacer que el comedero falle (o sea, tire un error) si intenta atender a un animal pero ya no le quedan más raciones.
+
+Se pide modelar el comedero y agregar algunos, distribuidos por todo el tablero. Luego, cuando el animal pase caminando sobre un comedero debería pasar lo siguiente:
+* si puede atenderlo, lo hace. Como muestra de gratitud el animal lo agradece con un mensaje a elección, que debe salir del animal;
+* si no puede atenderlo, no lo hace. En este caso debería aparecer un mensaje que sale del comedero y que comunica esta situación.
