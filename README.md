@@ -116,16 +116,16 @@ Sabiendo esto, y que en Wollok Game las flechas se llaman `up()`, `down()`, `lef
 |Down|Abajo|
 
 ## 6. Un poco más de lógica: tiene hambre
-Ahora nos toca determinar si una vaca o gallina tienen hambre, y usaremos la tecla h para que nos lo muestre.
+Ahora nos toca determinar si una vaca o gallina tienen hambre, y usaremos la tecla `H` para que nos lo muestre.
 
 Para las vacas vamos a determinar lo siguiente:
-- Las vacas tienen hambre si su peso esta por debajo de los 200 kilogramos
-- A partir de ahora solo podrán comer si tienen hambre.
-- Con cada movimiento que realiza la vaca pierde el 5% de su peso, y su peso nunca podría ser menor a 50 kilogramos.
+- Las vacas tienen hambre si su peso esta por debajo de los 200 kilogramos.
+- A partir de ahora solo podrán comer si tienen hambre. Si se les intenta dar de comer cuando no tienen hambre deben arrojar un error con un mensaje acorde.
+- Con cada movimiento que realiza la vaca pierde el 5% de su peso, pero nunca puede ser menor a 50 kilogramos.
 
 Y para las gallinas el comportamiento será el siguiente:
-- Las gallinas siempre pueden comer, independientemente si tienen o no hambre
-- Una gallina tendrá hambre si la cantidad de veces que fue a comer es multiplo de 3
+- Una gallina tendrá hambre si la cantidad de veces que fue a comer es par.
+- Las gallinas siempre pueden comer, independientemente si tienen o no hambre.
 - Las gallinas no pierden peso con los movimiento que realizan.
 
 ## 7. Comedero
