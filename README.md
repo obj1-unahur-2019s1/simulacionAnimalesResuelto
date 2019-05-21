@@ -128,4 +128,6 @@ Y para las gallinas el comportamiento será el siguiente:
 - Las gallinas siempre pueden comer, independientemente si tienen o no hambre.
 - Las gallinas no pierden peso con los movimiento que realizan.
 
+**Bonus:** hacer que la vaca tire un error cuando intento que camine y su energía es igual a 50.
+
 ## 7. Comedero
