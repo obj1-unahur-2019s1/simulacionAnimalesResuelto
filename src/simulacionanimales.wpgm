@@ -1,22 +1,64 @@
 import wollok.game.*
 import animales.*
+import dispositivos.*
 
 program animales {
 	// configuracion de pantalla
-	game.width(15)
-	game.height(15)
+	game.width(8)
+	game.height(8)
 
 	/*
 	 * agregamos personajes
 	 */ 
-	var animalActual = new Vaca()
+	const elComedero = new ComederoNormal()
+	game.addVisual(elComedero)
 
+	var animalActual = new Vaca()
+	game.addVisual(animalActual)
 	/*
 	 * configuraciones de teclado
 	 */
+	 
+	keyboard.c().onPressDo { animalActual.comer(40) }
+	keyboard.p().onPressDo { game.say(animalActual, animalActual.peso().toString()) }
+	keyboard.b().onPressDo { animalActual.beber() }
+	
+	keyboard.space().onPressDo {
+		const mensaje = 
+			if (animalActual.tieneSed()) { "Tengo seeeed" } else { "No tengo sed" }
+		game.say(animalActual, mensaje)
+	}
+	
+	keyboard.num1().onPressDo {
+		game.removeVisual(animalActual)
+		animalActual = new Gallina()
+		game.addVisual(animalActual)
+	}
+	
+	keyboard.num2().onPressDo {
+		game.removeVisual(animalActual)
+		animalActual = new Vaca()
+		game.addVisual(animalActual)
+	}
+	
+	keyboard.up().onPressDo 	{ animalActual.subir() }
+	keyboard.down().onPressDo 	{ animalActual.bajar() }
+	keyboard.left().onPressDo 	{ animalActual.izquierda() }
+	keyboard.right().onPressDo 	{ animalActual.derecha() }
+	
+	game.whenCollideDo(elComedero, { animal =>
+		animal.bajar()
+		if (elComedero.puedeAtender(animal)) {
+			elComedero.atender(animal)
+			game.say(animal, "Qué rico morfi")
+		} else {
+			game.say(elComedero, "Rajá de acá")
+		}
+	})
+	
 	
 	/*
 	 * arrancamos el juego
 	 */
-	 game.start()
+	game.start()
 }
